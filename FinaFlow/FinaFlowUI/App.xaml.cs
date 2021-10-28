@@ -31,7 +31,6 @@ namespace FinaFlowUI
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
-            SettingsHelper.Initialise();
         }
 
         /// <summary>

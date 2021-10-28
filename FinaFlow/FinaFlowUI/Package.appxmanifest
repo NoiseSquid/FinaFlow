@@ -7,11 +7,11 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="680e30e9-12e2-4ab8-9c9e-8b133b979b1b"
+    Name="13a93a0f-ff49-4c55-bbe6-31d38a776da9"
     Publisher="CN=Matthew"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="680e30e9-12e2-4ab8-9c9e-8b133b979b1b" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="13a93a0f-ff49-4c55-bbe6-31d38a776da9" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>FinaFlowUI</DisplayName>
