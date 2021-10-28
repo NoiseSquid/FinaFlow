@@ -1,0 +1,93 @@
+﻿<Page
+    x:Class="FinaFlowUI.Pages.RecordEditPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:FinaFlowUI.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    Loaded="Page_Loaded">
+
+    <StackPanel Padding="32">
+        <TextBlock x:Name="title" HorizontalAlignment="Center" Margin="16,16,16,16" Text="Edit Records" FontSize="32" TextWrapping="Wrap" VerticalAlignment="Top"/>
+
+        <Grid x:Name="ParamsGrid" ColumnSpacing="16" RowSpacing="16">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Id" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <TextBlock Text="My Account" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <TextBlock Text="External Account" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <TextBlock Text="Amount" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <TextBlock Text="Date" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+
+            <Grid Grid.Row="0" Grid.Column="1" Width="300" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <TextBox x:Name="tranId" TextChanged="tranId_TextChanged" Text="" Width="200" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                <Button x:Name="reloadId" Click="reloadId_Click" Content="clear" Width="100" HorizontalAlignment="Right" />
+            </Grid>
+            <ComboBox x:Name="tranMyAccount" ItemsSource="{x:Bind MyAccounts}" Grid.Row="1" Grid.Column="1" Width="300" HorizontalAlignment="Left" VerticalAlignment="Center" PlaceholderText="select account"/>
+            <ComboBox x:Name="tranExternalAccount" ItemsSource="{x:Bind ExAccounts}" Grid.Row="2" Grid.Column="1" Width="300" HorizontalAlignment="Left" VerticalAlignment="Center" PlaceholderText="select account"/>
+            <TextBox x:Name="tranAmount" Grid.Row="3" Grid.Column="1" Width="300" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <DatePicker x:Name="tranDate" Grid.Row="4" Grid.Column="1" Width="300"/>
+            <Button x:Name="tranSubmit" Grid.Row="5" Grid.Column="1" Width="300" Content="Create" HorizontalAlignment="Left" Click="tranSubmit_Click"/>
+        </Grid>
+
+        <Rectangle Height="1" Margin="0,16,0,16" Fill="{StaticResource AppBarSeparatorForegroundThemeBrush}"/>
+
+        <Grid x:Name="tranTable">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+        </Grid>
+
+        <StackPanel x:Name="pageSelectControls" Orientation="Horizontal" Spacing="20" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+            <Button x:Name="pageSelectLeft" Click="pageSelectLeft_Click">
+                <SymbolIcon Symbol="Back"/>
+            </Button>
+            <TextBlock x:Name="pageSelectNumber" Text="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <Button x:Name="pageSelectRight" Click="pageSelectRight_Click">
+                <SymbolIcon Symbol="Forward"/>
+            </Button>
+        </StackPanel>
+    </StackPanel>
+</Page>

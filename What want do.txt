@@ -1,0 +1,29 @@
+
+BASIC FUNCTIONALITY
+As a user, I want to store, view, edit, and delete my financial transactions
+I want to sort them by transaction type e.g. purchases, bills, expenses, et cetera.
+
+The core of the app is just a glorified spreadsheet. Additional visualisation and
+management functionality can be layered on top.
+Sounds like a simple node.js & express.js based API will do. It should be basic enough
+that creating a new ASP.NET or other such based API would not take long to do.
+MongoDB would be overkill, a simple SQLite or JSON data store would be more portable
+if I decide to host on a Raspery PI or AWS / Azure. Honestly CSVs would to the job.
+
+
+ADDITIONAL IDEAS
+A mobile app that can store records temporarily on the device, then batch send
+them to the server once a connection is established, since the API is likely
+going to run over a LAN for the foreseeable future.
+
+Actually, CSVs would allow all data to be stored locally removing the need for a
+dedicated server, but a faux server could be set up to allow the mobile app to
+send it's records to the master file?
+
+
+
+IMPLEMENTATION INITIAL SPECS
+ * local SQLite file + SEE encryption for data store
+ * Universal Windows Platform for the front end
+ * DB interaction done within the UWP app, but written as seperate package for
+   possible future porting.
